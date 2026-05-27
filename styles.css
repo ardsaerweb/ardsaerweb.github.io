@@ -1277,7 +1277,7 @@ h1, h2, h3, h4 {
   border: none;
   padding: 0;
   cursor: pointer;
-  width: 80px;
+  width: 160px;
   filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
   transition: transform 0.2s var(--ease-out), filter 0.2s;
   flex-shrink: 0;
