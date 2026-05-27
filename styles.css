@@ -1022,6 +1022,292 @@ h1, h2, h3, h4 {
 }
 
 /* ---------- Scroll reveal ---------- */
+/* ============================================================
+   Chatbot Widget
+   ============================================================ */
+
+.cb-root {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  animation: cb-fadein 0.4s var(--ease-out) both;
+}
+
+@keyframes cb-fadein {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Chat window ── */
+.cb-window {
+  width: 340px;
+  background: var(--navy-900);
+  border: 1px solid rgba(201,154,69,0.25);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.45);
+  animation: cb-fadein 0.3s var(--ease-out) both;
+}
+
+.cb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--navy-800);
+  border-bottom: 1px solid rgba(201,154,69,0.15);
+}
+
+.cb-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cb-header-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  background: var(--navy-700);
+}
+
+.cb-header-name {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--bone-50);
+  font-weight: 500;
+}
+
+.cb-header-sub {
+  font-size: 11px;
+  color: var(--gold-400);
+  letter-spacing: 0.04em;
+  margin-top: 1px;
+}
+
+.cb-x {
+  background: none;
+  border: none;
+  color: var(--slate-400);
+  font-size: 16px;
+  padding: 4px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.cb-x:hover { color: var(--bone-50); }
+
+.cb-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 320px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--navy-600) transparent;
+}
+
+.cb-msg {
+  max-width: 85%;
+  font-size: 13.5px;
+  line-height: 1.55;
+  padding: 10px 13px;
+  border-radius: 12px;
+}
+
+.cb-msg--bot {
+  background: var(--navy-700);
+  color: var(--bone-100);
+  border-bottom-left-radius: 4px;
+  align-self: flex-start;
+}
+
+.cb-msg--user {
+  background: var(--gold-500);
+  color: var(--navy-900);
+  border-bottom-right-radius: 4px;
+  align-self: flex-end;
+  font-weight: 500;
+}
+
+/* ── FAQ chips ── */
+.cb-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 0 16px 14px;
+}
+
+.cb-chip {
+  font-size: 12px;
+  font-family: var(--sans);
+  background: none;
+  border: 1px solid rgba(201,154,69,0.4);
+  color: var(--gold-300);
+  border-radius: 20px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.cb-chip:hover {
+  background: rgba(201,154,69,0.15);
+  color: var(--bone-50);
+}
+
+/* ── Input row ── */
+.cb-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-top: 1px solid rgba(201,154,69,0.12);
+  background: var(--navy-800);
+}
+
+.cb-input {
+  flex: 1;
+  background: var(--navy-700);
+  border: 1px solid rgba(201,154,69,0.2);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 13.5px;
+  font-family: var(--sans);
+  color: var(--bone-50);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.cb-input::placeholder { color: var(--slate-500); }
+.cb-input:focus { border-color: rgba(201,154,69,0.55); }
+
+.cb-send {
+  background: var(--gold-500);
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy-900);
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.cb-send:hover { background: var(--gold-400); }
+
+/* ── Speech bubble ── */
+.cb-bubble {
+  background: var(--navy-900);
+  border: 1px solid rgba(201,154,69,0.3);
+  border-radius: 14px;
+  padding: 14px 16px 12px;
+  width: 220px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+  position: relative;
+  animation: cb-fadein 0.35s var(--ease-out) both;
+}
+
+.cb-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 34px;
+  width: 14px;
+  height: 14px;
+  background: var(--navy-900);
+  border-right: 1px solid rgba(201,154,69,0.3);
+  border-bottom: 1px solid rgba(201,154,69,0.3);
+  transform: rotate(45deg);
+}
+
+.cb-bubble-x {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--slate-500);
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px;
+  transition: color 0.2s;
+}
+.cb-bubble-x:hover { color: var(--bone-50); }
+
+.cb-bubble-text {
+  font-size: 13px;
+  color: var(--bone-100);
+  margin: 0 0 10px;
+  line-height: 1.45;
+  padding-right: 16px;
+}
+
+.cb-bubble-cta {
+  background: var(--gold-500);
+  border: none;
+  border-radius: 7px;
+  padding: 7px 13px;
+  font-size: 12.5px;
+  font-family: var(--sans);
+  font-weight: 600;
+  color: var(--navy-900);
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: background 0.2s;
+}
+.cb-bubble-cta:hover { background: var(--gold-400); }
+
+/* ── Mascot button ── */
+.cb-mascot {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 80px;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
+  transition: transform 0.2s var(--ease-out), filter 0.2s;
+  flex-shrink: 0;
+}
+.cb-mascot:hover { transform: translateY(-4px); filter: drop-shadow(0 12px 28px rgba(0,0,0,0.5)); }
+.cb-mascot--open { transform: scale(0.95); }
+
+.cb-mascot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cb-mascot-fallback {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--gold-500);
+  color: var(--navy-900);
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   Scroll reveal
+   ============================================================ */
+
 .reveal {
   opacity: 0;
   transform: translateY(20px);

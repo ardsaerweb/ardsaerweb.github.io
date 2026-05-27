@@ -47,6 +47,7 @@ function App() {
       </main>
       <Footer />
       <ScrollReveal />
+      <ChatBot />
     </React.Fragment>
   );
 }
