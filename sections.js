@@ -206,9 +206,9 @@ function FrameworkSection() {
 // ---------- Proof / Experience ----------
 function ProofSection() {
   const stats = [
-    { value: "$100M", arrow: "→", value2: "$350M", label: "Bookings scaled" },
-    { value: "$115M", arrow: "→", value2: "$225M", label: "Revenue growth" },
-    { value: "156", label: "Cross-functional team members led" },
+    { value: "$250M", arrow: "→", value2: "$1B", label: "Bookings scaled" },
+    { value: "$50M", arrow: "→", value2: "$500M", label: "Revenue growth" },
+    { value: "225", label: "Cross-functional team members led" },
     { value: "20+", suffix: "yrs", label: "Executive revenue leadership" },
   ];
   return (
