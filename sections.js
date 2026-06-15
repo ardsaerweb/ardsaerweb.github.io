@@ -225,7 +225,7 @@ function ProofSection() {
               <em>Boardroom relevance.</em>
             </h2>
             <p className="lede">
-              Paul Granito brings two decades of executive revenue leadership across
+              Ardsaer brings decades of executive revenue leadership across
               complex B2B markets, SaaS transformation, recurring revenue growth, and
               cross-functional operating leadership.
             </p>
