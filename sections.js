@@ -227,7 +227,7 @@ function ProofSection() {
             <p className="lede">
               Ardsaer brings decades of executive revenue leadership across
               complex B2B markets, SaaS transformation, recurring revenue growth, and
-              cross-functional operating leadership.
+              cross-functional operating models.
             </p>
           </div>
         </div>
