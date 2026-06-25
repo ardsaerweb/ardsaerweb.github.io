@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ardsaer — LinkedIn Banner Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background: #1a1a2e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: "Geist", sans-serif;
+      gap: 24px;
+    }
+    canvas { display: block; box-shadow: 0 8px 40px rgba(0,0,0,0.6); }
+    .btn {
+      background: #C99A45;
+      color: #06111F;
+      border: none;
+      padding: 14px 32px;
+      font-size: 15px;
+      font-family: "Geist", sans-serif;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+    }
+    .btn:hover { background: #D9B26B; }
+    .note {
+      color: rgba(255,255,255,0.4);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="banner" width="1128" height="191"></canvas>
+<button class="btn" onclick="download()">Download Banner PNG</button>
+<p class="note">1128 × 191 px · LinkedIn Company Page Cover Photo</p>
+
+<script>
+const canvas = document.getElementById('banner');
+const ctx    = canvas.getContext('2d');
+
+const W = 1128, H = 191;
+
+// Load logo
+const logo = new Image();
+logo.crossOrigin = 'anonymous';
+logo.onload = draw;
+logo.onerror = draw; // draw without logo if it fails
+logo.src = 'images/Logo.png';
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+
+  // ── Background ──
+  ctx.fillStyle = '#06111F';
+  ctx.fillRect(0, 0, W, H);
+
+  // Subtle gradient overlay left→right
+  const grad = ctx.createLinearGradient(0, 0, W, 0);
+  grad.addColorStop(0,   'rgba(20,33,51,0.6)');
+  grad.addColorStop(0.5, 'rgba(6,17,31,0)');
+  grad.addColorStop(1,   'rgba(6,17,31,0.3)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, H);
+
+  // ── Gold top border line ──
+  ctx.fillStyle = '#C99A45';
+  ctx.fillRect(0, 0, W, 2);
+
+  // ── Gold bottom border line ──
+  ctx.fillStyle = 'rgba(201,154,69,0.3)';
+  ctx.fillRect(0, H - 1, W, 1);
+
+  // ── Vertical gold accent line ──
+  ctx.fillStyle = 'rgba(201,154,69,0.25)';
+  ctx.fillRect(72, 28, 1, H - 56);
+
+  // ── ARDSAER wordmark ──
+  ctx.fillStyle = '#D9B26B';
+  ctx.font = '500 38px "Geist Mono", monospace';
+  ctx.letterSpacing = '0.22em';
+  ctx.fillText('ARDSAER', 96, 82);
+
+  // ── Rule under wordmark ──
+  ctx.fillStyle = 'rgba(201,154,69,0.35)';
+  ctx.fillRect(96, 92, 220, 1);
+
+  // ── Revenue Architecture sub ──
+  ctx.fillStyle = 'rgba(148,163,176,0.85)';
+  ctx.font = '400 11px "Geist Mono", monospace';
+  ctx.letterSpacing = '0.28em';
+  ctx.fillText('REVENUE  ARCHITECTURE', 96, 114);
+
+  // ── Tagline ──
+  ctx.fillStyle = 'rgba(250,248,243,0.72)';
+  ctx.font = 'italic 400 15px "Playfair Display", serif';
+  ctx.letterSpacing = '0.01em';
+  ctx.fillText('Revenue Architecture for Companies at Inflection Points', 96, 148);
+
+  // ── Logo (right side) ──
+  if (logo.complete && logo.naturalWidth > 0) {
+    const lh = 110;
+    const lw = logo.naturalWidth * (lh / logo.naturalHeight);
+    const lx = W - lw - 72;
+    const ly = (H - lh) / 2;
+
+    // White card behind logo
+    const pad = 10;
+    ctx.fillStyle = '#FAF8F3';
+    roundRect(ctx, lx - pad, ly - pad, lw + pad * 2, lh + pad * 2, 10);
+    ctx.fill();
+
+    ctx.drawImage(logo, lx, ly, lw, lh);
+  }
+
+  // ── Right-side tagline ──
+  const rightX = logo.complete && logo.naturalWidth > 0
+    ? W - (logo.naturalWidth * (110 / logo.naturalHeight)) - 72 - 24
+    : W - 72;
+
+  ctx.textAlign = 'right';
+  ctx.fillStyle = 'rgba(201,154,69,0.6)';
+  ctx.font = '400 10px "Geist Mono", monospace';
+  ctx.letterSpacing = '0.2em';
+  ctx.fillText('BOARD ADVISORY  ·  FRACTIONAL CRO  ·  EQUITY RAISE', rightX, H - 28);
+  ctx.textAlign = 'left';
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+}
+
+function download() {
+  const a = document.createElement('a');
+  a.download = 'ardsaer-linkedin-banner.png';
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+}
+</script>
+
+</body>
+</html>
