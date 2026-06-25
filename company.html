@@ -93,9 +93,14 @@
       display: none;
     }
 
-    .header-logo-canvas {
-      width: 80px;
+    .header-logo-wordmark {
+      font-family: var(--mono);
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--gold-400);
       display: block;
+      line-height: 1;
     }
 
     .header-label {
@@ -445,7 +450,7 @@
       <p class="header-tagline">Revenue Architecture for Companies at Inflection Points</p>
     </div>
     <div class="header-right">
-      <img src="images/Logo.png" alt="Ardsaer" class="header-logo-img" />
+      <span class="header-logo-wordmark">ARDSAER</span>
     </div>
   </header>
 
@@ -604,41 +609,6 @@
 
 </div>
 
-<script>
-(function() {
-  const img = document.querySelector('.header-logo-img');
-  if (!img) return;
-  const tmpImg = new Image();
-  tmpImg.crossOrigin = 'anonymous';
-  tmpImg.onload = function() {
-    const scale = 2;
-    const W = Math.round(80 * scale);
-    const H = Math.round(W * (tmpImg.naturalHeight / tmpImg.naturalWidth));
-    const canvas = document.createElement('canvas');
-    canvas.width = W; canvas.height = H;
-    canvas.className = 'header-logo-canvas';
-    const ctx = canvas.getContext('2d');
-    ctx.drawImage(tmpImg, 0, 0, W, H);
-    const id = ctx.getImageData(0, 0, W, H);
-    const px = id.data;
-    for (let i = 0; i < px.length; i += 4) {
-      const r = px[i], g = px[i+1], b = px[i+2];
-      if (r > 180 && g > 180 && b > 180) {
-        px[i+3] = 0;
-      } else {
-        const t = 1 - (r + g + b) / (3 * 255);
-        px[i]   = Math.round(217 * Math.min(t * 1.6, 1));
-        px[i+1] = Math.round(178 * Math.min(t * 1.6, 1));
-        px[i+2] = Math.round(107 * Math.min(t * 1.6, 1));
-        px[i+3] = Math.round(255 * Math.min(t * 1.8, 1));
-      }
-    }
-    ctx.putImageData(id, 0, 0);
-    img.parentNode.insertBefore(canvas, img);
-  };
-  tmpImg.src = img.src;
-})();
-</script>
 
 </body>
 </html>
