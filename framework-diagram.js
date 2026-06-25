@@ -20,7 +20,7 @@ function FrameworkDiagram({ active, onHover }) {
   };
 
   return (
-    <svg className="fw-svg" viewBox="0 0 560 560" aria-hidden="true">
+    <svg className="fw-svg" viewBox="-20 0 600 560" aria-hidden="true">
       <defs>
         <radialGradient id="fwGlow" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor="#C99A45" stopOpacity="0.15" />
