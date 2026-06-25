@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ardsaer — Company Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy-900: #06111F;
+      --navy-800: #0B1726;
+      --navy-700: #142133;
+      --gold-500: #C99A45;
+      --gold-400: #D9B26B;
+      --gold-300: #E6C892;
+      --gold-line: rgba(201,154,69,0.3);
+      --bone-50:  #FAF8F3;
+      --bone-100: #F4F0E7;
+      --slate-400: #94A3B0;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans:  "Geist", -apple-system, sans-serif;
+      --mono:  "Geist Mono", monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--navy-900);
+      color: var(--bone-50);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ── Header ── */
+    .header {
+      padding: 64px 0 56px;
+      border-bottom: 1px solid var(--gold-line);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .logo-block {}
+
+    .logo-wordmark {
+      font-family: var(--mono);
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--gold-400);
+      display: block;
+      line-height: 1;
+    }
+
+    .logo-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--gold-line);
+      margin: 10px 0 8px;
+    }
+
+    .logo-sub {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      color: var(--slate-400);
+      text-transform: uppercase;
+    }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .header-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gold-500);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .header-tagline {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-style: italic;
+      color: var(--bone-100);
+      max-width: 280px;
+      line-height: 1.5;
+    }
+
+    /* ── Hero band ── */
+    .hero-band {
+      padding: 72px 0 64px;
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gold-500);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .hero-heading {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 400;
+      line-height: 1.18;
+      color: var(--bone-50);
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .hero-heading em {
+      font-style: italic;
+      color: var(--gold-400);
+    }
+
+    .hero-body {
+      font-size: 17px;
+      color: rgba(250,248,243,0.75);
+      max-width: 620px;
+      line-height: 1.7;
+    }
+
+    /* ── Two-col section ── */
+    .two-col {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--gold-line);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .col-label {
+      padding-top: 4px;
+    }
+
+    .col-label .index {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gold-500);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .col-label h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--bone-50);
+      line-height: 1.3;
+    }
+
+    .col-label h3 em { font-style: italic; color: var(--gold-400); }
+
+    .col-body p {
+      font-size: 15.5px;
+      color: rgba(250,248,243,0.78);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .col-body p:last-child { margin-bottom: 0; }
+
+    /* ── Pillars grid ── */
+    .pillars-section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .pillars-head {
+      margin-bottom: 40px;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gold-line);
+      border: 1px solid var(--gold-line);
+    }
+
+    .pillar-card {
+      background: var(--navy-800);
+      padding: 28px 24px;
+    }
+
+    .pillar-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--gold-500);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .pillar-name {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--bone-50);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .pillar-body {
+      font-size: 13px;
+      color: rgba(250,248,243,0.6);
+      line-height: 1.65;
+    }
+
+    /* ── Stats band ── */
+    .stats-band {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--gold-line);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    .stat {}
+
+    .stat-value {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--gold-400);
+      display: block;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .stat-arrow {
+      font-size: 20px;
+      color: rgba(201,154,69,0.5);
+    }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.14em;
+      color: var(--slate-400);
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    /* ── Engagement models ── */
+    .engagements-section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .engagement-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--gold-line);
+      border: 1px solid var(--gold-line);
+      margin-top: 40px;
+    }
+
+    .engagement-item {
+      background: var(--navy-800);
+      padding: 28px 24px;
+    }
+
+    .engagement-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--bone-50);
+      margin-bottom: 10px;
+    }
+
+    .engagement-body {
+      font-size: 13px;
+      color: rgba(250,248,243,0.6);
+      line-height: 1.65;
+    }
+
+    /* ── Footer / Contact ── */
+    .footer-band {
+      padding: 64px 0 72px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .footer-left {}
+
+    .footer-cta-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gold-500);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .footer-heading {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 400;
+      color: var(--bone-50);
+      line-height: 1.25;
+      max-width: 420px;
+      margin-bottom: 24px;
+    }
+
+    .footer-heading em { font-style: italic; color: var(--gold-400); }
+
+    .footer-note {
+      font-size: 13.5px;
+      color: rgba(250,248,243,0.55);
+      max-width: 380px;
+      line-height: 1.65;
+    }
+
+    .footer-right {
+      padding-top: 4px;
+    }
+
+    .contact-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--slate-400);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .contact-email {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-style: italic;
+      color: var(--gold-400);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+
+    .contact-email:hover { color: var(--gold-300); }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--gold-line);
+      margin-bottom: 20px;
+    }
+
+    .footer-meta {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.1em;
+      color: var(--slate-400);
+      line-height: 1.8;
+    }
+
+    /* ── Bottom bar ── */
+    .bottom-bar {
+      border-top: 1px solid var(--gold-line);
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .bottom-bar span {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: rgba(148,163,176,0.6);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 720px) {
+      .page { padding: 0 24px; }
+      .header { flex-direction: column; }
+      .header-right { text-align: left; }
+      .header-tagline { max-width: none; }
+      .two-col { grid-template-columns: 1fr; gap: 24px; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
+      .stats-band { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .engagement-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+      .stats-band { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ── Header ── -->
+  <header class="header">
+    <div class="logo-block">
+      <span class="logo-wordmark">ARDSAER</span>
+      <div class="logo-rule"></div>
+      <span class="logo-sub">Revenue Architecture</span>
+    </div>
+    <div class="header-right">
+      <span class="header-label">Company Profile</span>
+      <p class="header-tagline">Revenue Architecture for Companies at Inflection Points</p>
+    </div>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="hero-band">
+    <span class="eyebrow">A Revenue Architecture Firm</span>
+    <h1 class="hero-heading">
+      Build the revenue engine <em>investors expect.</em>
+    </h1>
+    <p class="hero-body">
+      Ardsaer helps CEOs, boards, and growth-stage companies design the strategy, systems, talent model, and operating cadence required to scale predictable revenue. We replace improvisation with architecture.
+    </p>
+  </section>
+
+  <!-- ── About ── -->
+  <section class="two-col">
+    <div class="col-label">
+      <span class="index">01 — About</span>
+      <h3>What <em>Ardsaer</em> does</h3>
+    </div>
+    <div class="col-body">
+      <p>
+        Ardsaer is a revenue architecture firm working with CEOs, boards, and investors at the moments when growth becomes a board-level issue. We design the strategy, systems, and operating model that converts ambition into predictable, scalable revenue.
+      </p>
+      <p>
+        Companies at inflection points often outgrow the systems that got them here. Pipeline becomes less predictable. Forecasts lose credibility. Teams fragment. Boards want answers. Ardsaer replaces improvisation with architecture — connecting the growth story investors hear with the operating system teams actually execute.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Framework / Pillars ── -->
+  <section class="pillars-section">
+    <div class="pillars-head">
+      <span class="eyebrow">02 — Framework</span>
+      <h2 style="font-family: var(--serif); font-size: clamp(22px, 3vw, 30px); font-weight: 400; color: var(--bone-50); line-height: 1.25; max-width: 560px;">
+        The Ardsaer Revenue Architecture Framework. <em style="font-style:italic; color: var(--gold-400);">Five pillars.</em>
+      </h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <span class="pillar-num">01 / 05</span>
+        <div class="pillar-name">Market Thesis</div>
+        <p class="pillar-body">Who we serve, why we win, where we focus.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">02 / 05</span>
+        <div class="pillar-name">GTM Design</div>
+        <p class="pillar-body">Sales motion, channels, segmentation, pricing, and funnel architecture.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">03 / 05</span>
+        <div class="pillar-name">Revenue System</div>
+        <p class="pillar-body">Pipeline, forecasting, metrics, CRM discipline, operating cadence.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">04 / 05</span>
+        <div class="pillar-name">Talent &amp; Leadership</div>
+        <p class="pillar-body">Org design, roles, accountability, performance standards, leadership rhythm.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">05 / 05</span>
+        <div class="pillar-name">Capital Readiness</div>
+        <p class="pillar-body">Investor story, growth model, board reporting, commercial proof.</p>
+      </div>
+      <div class="pillar-card" style="background: var(--navy-700);">
+        <span class="pillar-num" style="color: rgba(201,154,69,0.4);">· · ·</span>
+        <div class="pillar-name" style="font-style:italic; color: var(--gold-400); font-size: 15px; line-height: 1.45;">Five pillars, one connected model.</div>
+        <p class="pillar-body">Engage individually, or as the integrated architecture that holds them together.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats ── -->
+  <section class="stats-band">
+    <div class="stat">
+      <span class="stat-value">$250M <span class="stat-arrow">→</span> $1B</span>
+      <span class="stat-label">Bookings scaled</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">$50M <span class="stat-arrow">→</span> $500M</span>
+      <span class="stat-label">Revenue growth</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">225</span>
+      <span class="stat-label">Cross-functional team members led</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">20<em style="font-size:20px; font-style:normal; color: var(--gold-500);">+ yrs</em></span>
+      <span class="stat-label">Executive revenue leadership</span>
+    </div>
+  </section>
+
+  <!-- ── Engagement Models ── -->
+  <section class="engagements-section">
+    <span class="eyebrow">03 — Engagements</span>
+    <h2 style="font-family: var(--serif); font-size: clamp(22px, 3vw, 30px); font-weight: 400; color: var(--bone-50); line-height: 1.25; max-width: 560px;">
+      Flexible models for <em style="font-style:italic; color: var(--gold-400);">critical growth moments.</em>
+    </h2>
+    <div class="engagement-list">
+      <div class="engagement-item">
+        <div class="engagement-title">Board Advisory</div>
+        <p class="engagement-body">For boards seeking sharper revenue visibility, stronger GTM governance, and better alignment between growth ambition and operating reality.</p>
+      </div>
+      <div class="engagement-item">
+        <div class="engagement-title">Fractional CRO</div>
+        <p class="engagement-body">For companies that need senior revenue leadership but are not ready for — or do not need — a full-time CRO.</p>
+      </div>
+      <div class="engagement-item">
+        <div class="engagement-title">Interim CRO</div>
+        <p class="engagement-body">For transitions, turnarounds, post-raise execution, or periods where the revenue organization needs immediate leadership.</p>
+      </div>
+      <div class="engagement-item">
+        <div class="engagement-title">Equity Raise Advisory</div>
+        <p class="engagement-body">For companies preparing a capital raise and needing to sharpen the commercial story, growth assumptions, and investor confidence.</p>
+      </div>
+      <div class="engagement-item">
+        <div class="engagement-title">Strategic Projects</div>
+        <p class="engagement-body">Focused work on GTM redesign, sales process, forecasting, pipeline quality, org design, pricing, or board reporting.</p>
+      </div>
+      <div class="engagement-item" style="background: var(--navy-700);">
+        <div class="engagement-title" style="font-style:italic; color: var(--gold-400);">How we work</div>
+        <p class="engagement-body">Each engagement is designed around the decision the company is making — not the hours on a calendar. Most begin with a 60-minute working session.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <footer>
+    <div class="footer-band">
+      <div class="footer-left">
+        <span class="footer-cta-label">Begin the conversation</span>
+        <h2 class="footer-heading">
+          Let's build the revenue system behind your <em>next stage of growth.</em>
+        </h2>
+        <p class="footer-note">
+          Initial conversations are private, focused, and free of obligation. Most engagements begin with a 60-minute working session to scope the revenue question on the table.
+        </p>
+      </div>
+      <div class="footer-right">
+        <span class="contact-label">Direct</span>
+        <a href="mailto:paul@ardsaer.com" class="contact-email">paul@ardsaer.com</a>
+        <div class="divider"></div>
+        <div class="footer-meta">
+          ardsaer.com<br />
+          Founded by Paul Granito<br />
+          Revenue Architecture · Fractional CRO<br />
+          Board Advisory · Equity Raise
+        </div>
+      </div>
+    </div>
+    <div class="bottom-bar">
+      <span>© 2026 Ardsaer LLC — All rights reserved.</span>
+      <span>ARDSAER · REVENUE ARCHITECTURE</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
