@@ -4,11 +4,11 @@
 
 function FrameworkDiagram({ active, onHover }) {
   const pillars = [
-    { id: 0, label: "MARKET THESIS",     angle: -90 },
-    { id: 1, label: "GTM DESIGN",        angle: -18 },
-    { id: 2, label: "REVENUE SYSTEM",    angle: 54 },
-    { id: 3, label: "TALENT & LEADERSHIP", angle: 126 },
-    { id: 4, label: "CAPITAL READINESS", angle: 198 },
+    { id: 0, lines: ["MARKET THESIS"],          angle: -90 },
+    { id: 1, lines: ["GTM DESIGN"],             angle: -18 },
+    { id: 2, lines: ["REVENUE SYSTEM"],         angle: 54 },
+    { id: 3, lines: ["TALENT &", "LEADERSHIP"], angle: 126 },
+    { id: 4, lines: ["CAPITAL", "READINESS"],   angle: 198 },
   ];
   const cx = 280, cy = 280;
   const rPillar = 170;
@@ -71,8 +71,8 @@ function FrameworkDiagram({ active, onHover }) {
         const isActive = active === p.id;
         const labelOffset = 38;
         const [lx, ly] = toXY(p.angle, rPillar + labelOffset);
-        // Adjust text anchor based on horizontal position
         const ta = lx > cx + 30 ? "start" : lx < cx - 30 ? "end" : "middle";
+        const multiLine = p.lines.length > 1;
         return (
           <g
             key={"n" + p.id}
@@ -92,10 +92,13 @@ function FrameworkDiagram({ active, onHover }) {
             </text>
             <text
               className={"pillar-label " + (isActive ? "active" : "")}
-              x={lx} y={ly + 4}
+              x={lx}
+              y={multiLine ? ly - 2 : ly + 4}
               textAnchor={ta}
             >
-              {p.label}
+              {p.lines.map((line, i) => (
+                <tspan key={i} x={lx} dy={i === 0 ? 0 : "1.3em"}>{line}</tspan>
+              ))}
             </text>
           </g>
         );
