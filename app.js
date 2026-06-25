@@ -43,6 +43,7 @@ function App() {
         <EngagementsSection />
         <AudienceSection />
         <DifferentiationSection />
+        <PhilosophySection />
         <CTASection />
       </main>
       <Footer />

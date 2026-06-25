@@ -1323,6 +1323,190 @@ h1, h2, h3, h4 {
 .reveal.d4 { transition-delay: 320ms; }
 .reveal.d5 { transition-delay: 400ms; }
 
+/* ---------- Philosophy Section ---------- */
+.philosophy-header {
+  padding: clamp(80px, 11vw, 140px) 0 clamp(64px, 9vw, 120px);
+  position: relative;
+  overflow: hidden;
+}
+.philosophy-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201, 154, 69, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 154, 69, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.philosophy-header-inner {
+  position: relative;
+}
+.philosophy-body {
+  max-width: 760px;
+}
+.philosophy-block {
+  margin-bottom: 0;
+}
+.body-lg {
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.75;
+  color: var(--slate-600);
+  max-width: 64ch;
+}
+.philosophy-callout {
+  border-left: 2px solid var(--gold-500);
+  padding: 22px 28px;
+  margin: 32px 0 0;
+  background: var(--bone-100);
+}
+.philosophy-callout-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.philosophy-callout-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink-900);
+}
+.philosophy-callout-pronunciation {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--gold-500);
+}
+.philosophy-callout-text {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-style: italic;
+  color: var(--ink-900);
+  line-height: 1.55;
+  margin: 0;
+}
+.philosophy-rule {
+  border: none;
+  border-top: 1px solid rgba(10, 19, 32, 0.1);
+  margin: 56px 0;
+}
+.philosophy-founder {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: var(--bone-200);
+  padding: 28px;
+  margin: 28px 0 32px;
+}
+.philosophy-founder-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--gold-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--navy-900);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.philosophy-founder-name {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink-900);
+  margin: 0 0 2px;
+}
+.philosophy-founder-info { flex: 1; }
+.philosophy-pullquote {
+  font-family: var(--serif);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--ink-900);
+  border-top: 1px solid rgba(10, 19, 32, 0.12);
+  border-bottom: 1px solid rgba(10, 19, 32, 0.12);
+  padding: 28px 0;
+  margin: 0 0 28px;
+  max-width: 56ch;
+}
+.philosophy-pullquote em {
+  font-style: italic;
+  color: var(--gold-500);
+}
+.philosophy-inflections {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+.philosophy-inflection-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(10, 19, 32, 0.08);
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--slate-600);
+}
+.philosophy-inflection-item:last-child { border-bottom: none; }
+.philosophy-inflection-item::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: var(--gold-500);
+  border-radius: 50%;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+.philosophy-closing {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(64px, 9vw, 120px) 0;
+}
+.philosophy-closing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201, 154, 69, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 154, 69, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.philosophy-closing-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.philosophy-closing-lines { display: flex; flex-direction: column; gap: 4px; }
+.philosophy-closing-bright {
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.8vw, 22px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bone-50);
+  margin: 0;
+}
+.philosophy-closing-dim {
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.8vw, 22px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(248, 246, 241, 0.35);
+  margin: 0;
+}
+@media (max-width: 820px) {
+  .philosophy-closing-inner { grid-template-columns: 1fr; gap: 40px; }
+  .philosophy-founder { flex-direction: column; }
+}
+
 /* ---------- Utility ---------- */
 .divider-gold {
   display: block;
