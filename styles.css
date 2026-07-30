@@ -774,6 +774,135 @@ h1, h2, h3, h4 {
   .stat:last-child { border-bottom: none; }
 }
 
+/* ---------- Case Study ---------- */
+.cs-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 56px;
+}
+
+.cs-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.cs-divider {
+  height: 1px;
+  background: var(--gold-line);
+  margin-bottom: 48px;
+}
+
+.cs-block p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--slate-600);
+  margin-bottom: 14px;
+}
+.cs-block p:last-child { margin-bottom: 0; }
+
+.cs-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--gold-500);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.cs-intro {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--slate-600);
+  margin-bottom: 20px;
+}
+
+.cs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs-list li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--slate-600);
+  padding-left: 24px;
+  position: relative;
+}
+
+.cs-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--gold-500);
+  font-size: 13px;
+  top: 1px;
+}
+
+.cs-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--gold-line);
+  border: 1px solid var(--gold-line);
+  margin-bottom: 40px;
+}
+
+.cs-metric {
+  background: var(--navy-900);
+  padding: 28px 24px;
+}
+
+.cs-metric-value {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--gold-400);
+  display: block;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.cs-metric-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--bone-50);
+  display: block;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.cs-metric-sub {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-400);
+  display: block;
+}
+
+.cs-closing {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--slate-500);
+  line-height: 1.75;
+  margin-top: 24px !important;
+  border-top: 1px solid var(--bone-200);
+  padding-top: 20px;
+}
+
+@media (max-width: 720px) {
+  .cs-two-col { grid-template-columns: 1fr; gap: 32px; }
+  .cs-metrics { grid-template-columns: 1fr 1fr; }
+}
+
 /* ---------- Engagements ---------- */
 .engagement-list {
   display: grid;

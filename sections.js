@@ -251,6 +251,96 @@ function ProofSection() {
   );
 }
 
+// ---------- Case Study ----------
+function CaseStudySection() {
+  const actions = [
+    "Developed and launched three new enterprise products aligned with evolving customer demand and long-term platform strategy.",
+    "Introduced a two-tier distribution ecosystem that expanded market reach through strategic business partners and resellers.",
+    "Transitioned the commercial organization from a perpetual licensing model to a platform-based, subscription-first operating model, aligning product innovation, customer success, and commercial execution around recurring customer value.",
+    "Streamlined the portfolio through the strategic divestiture of two non-core business lines, allowing greater investment in the company's highest-value capabilities.",
+    "Unified product management, marketing, sales, customer success, and financial management around a disciplined commercial operating model designed to improve execution, forecasting, and scalability.",
+  ];
+  const results = [
+    "Increased signings by 75% year-over-year.",
+    "Transitioned the business to a 92% subscription-based revenue model.",
+    "Successfully launched three new enterprise products that expanded the platform portfolio.",
+    "Completed the strategic divestiture of two non-core business lines, sharpening organizational focus.",
+    "Significantly reduced operating expenses while creating a more efficient, scalable organization.",
+  ];
+  const metrics = [
+    { value: "75%",  label: "Signings growth",          sub: "year-over-year" },
+    { value: "92%",  label: "Subscription revenue",     sub: "model transition" },
+    { value: "3",    label: "New enterprise products",  sub: "launched" },
+    { value: "2",    label: "Non-core divestitures",    sub: "completed" },
+  ];
+
+  return (
+    <section className="section" id="case-study" data-screen-label="05 Case Study" style={{ background: "var(--bone-100)" }}>
+      <div className="container">
+        <div className="section-head">
+          <div className="label-col">
+            <span className="index">05 — Case Study</span>
+            <span className="eyebrow">Framework in Practice</span>
+          </div>
+          <div className="title-col">
+            <h2 className="h2">
+              Transforming a Legacy Enterprise into a{" "}
+              <em>Platform-Based Subscription Business.</em>
+            </h2>
+            <p className="lede" style={{ fontSize: "13px", letterSpacing: "0.1em", fontStyle: "normal", color: "var(--slate-500)", marginTop: "-4px" }}>
+              Geospatial Intelligence · Enterprise Software
+            </p>
+          </div>
+        </div>
+
+        <div className="cs-body">
+          <div className="cs-two-col">
+            <div className="cs-block">
+              <span className="cs-label">Situation</span>
+              <p>A market-leading geospatial intelligence business had reached a strategic inflection point. While its technology leadership remained unquestioned, its commercial model was still rooted in perpetual licensing as the market increasingly shifted toward platform-based subscription solutions. Leadership recognized that sustaining long-term growth required more than incremental improvements — it required fundamentally redesigning how the business created, delivered, and captured value.</p>
+              <p>The strategic objective was to accelerate recurring revenue, improve profitability, and position the business for greater enterprise value while maintaining customer confidence and market leadership.</p>
+            </div>
+            <div className="cs-block">
+              <span className="cs-label">Obstacles</span>
+              <p>The challenge extended well beyond introducing subscription pricing. Product strategy, sales execution, customer success, channel partnerships, marketing, and financial management all needed to be redesigned around a recurring revenue business model.</p>
+              <p>Simultaneously, the organization needed to make difficult portfolio decisions, execute operational restructuring, and maintain business momentum without disrupting customer relationships or slowing innovation.</p>
+            </div>
+          </div>
+
+          <div className="cs-divider" />
+
+          <div className="cs-block">
+            <span className="cs-label">Actions</span>
+            <p className="cs-intro">A comprehensive Revenue Architecture was developed to align strategy, execution, and organizational priorities around a platform-based growth model.</p>
+            <ul className="cs-list">
+              {actions.map((a, i) => <li key={i}>{a}</li>)}
+            </ul>
+          </div>
+
+          <div className="cs-divider" />
+
+          <div className="cs-block">
+            <span className="cs-label">Results</span>
+            <div className="cs-metrics">
+              {metrics.map((m, i) => (
+                <div className="cs-metric" key={i}>
+                  <span className="cs-metric-value">{m.value}</span>
+                  <span className="cs-metric-label">{m.label}</span>
+                  <span className="cs-metric-sub">{m.sub}</span>
+                </div>
+              ))}
+            </div>
+            <ul className="cs-list">
+              {results.map((r, i) => <li key={i}>{r}</li>)}
+            </ul>
+            <p className="cs-closing">Beyond the measurable business results, the transformation established a commercial operating model capable of delivering stronger customer lifetime value, improved forecasting discipline, increased strategic agility, and enhanced long-term enterprise value.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ---------- Engagements ----------
 function EngagementsSection() {
   const engagements = [

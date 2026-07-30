@@ -40,6 +40,7 @@ function App() {
         <CapabilitiesSection />
         <FrameworkSection />
         <ProofSection />
+        <CaseStudySection />
         <EngagementsSection />
         <AudienceSection />
         <DifferentiationSection />
