@@ -257,7 +257,7 @@ function CaseStudyPanel({ cs }) {
 
       <span className="cs-inline-section-label">Results</span>
       {cs.resultsIntro && <p className="cs-inline-body">{cs.resultsIntro}</p>}
-      <div className="cs-inline-metrics">
+      <div className="cs-inline-metrics" style={{ gridTemplateColumns: `repeat(${cs.metrics.length}, 1fr)` }}>
         {cs.metrics.map((m, i) => (
           <div className="cs-inline-metric" key={i}>
             <span className="cs-inline-value">{m.value}</span>
