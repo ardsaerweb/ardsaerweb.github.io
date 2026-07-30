@@ -150,19 +150,37 @@ function CapabilitiesSection() {
 // ---------- Framework ----------
 const GTM_CASE_STUDY = {
   industry: "Geospatial Intelligence · Enterprise Software",
-  situation: "A market-leading geospatial intelligence business had reached a strategic inflection point. Its commercial model was rooted in perpetual licensing as the market shifted toward platform-based subscription solutions. Leadership recognized that sustaining long-term growth required fundamentally redesigning how the business created, delivered, and captured value.",
+  situation: [
+    "A market-leading geospatial intelligence business had reached a strategic inflection point. While its technology leadership remained unquestioned, its commercial model was still rooted in perpetual licensing as the market increasingly shifted toward platform-based subscription solutions. Leadership recognized that sustaining long-term growth required more than incremental improvements—it required fundamentally redesigning how the business created, delivered, and captured value.",
+    "The strategic objective was to accelerate recurring revenue, improve profitability, and position the business for greater enterprise value while maintaining customer confidence and market leadership.",
+  ],
+  obstacles: [
+    "The challenge extended well beyond introducing subscription pricing. Product strategy, sales execution, customer success, channel partnerships, marketing, and financial management all needed to be redesigned around a recurring revenue business model.",
+    "Simultaneously, the organization needed to make difficult portfolio decisions, execute operational restructuring, and maintain business momentum without disrupting customer relationships or slowing innovation.",
+  ],
+  actionsIntro: "A comprehensive Revenue Architecture was developed to align strategy, execution, and organizational priorities around a platform-based growth model. Key initiatives included:",
+  actions: [
+    "Developed and launched three new enterprise products aligned with evolving customer demand and long-term platform strategy.",
+    "Introduced a two-tier distribution ecosystem that expanded market reach through strategic business partners and resellers.",
+    "Transitioned the commercial organization from a perpetual licensing model to a platform-based, subscription-first operating model, aligning product innovation, customer success, and commercial execution around recurring customer value.",
+    "Streamlined the portfolio through the strategic divestiture of two non-core business lines, allowing greater investment in the company's highest-value capabilities.",
+    "Unified product management, marketing, sales, customer success, and financial management around a disciplined commercial operating model designed to improve execution, forecasting, and scalability.",
+  ],
+  resultsIntro: "The transformation repositioned the organization from a traditional software business to a modern platform company built for predictable, recurring growth. Business outcomes included:",
   metrics: [
-    { value: "75%",  label: "Signings growth",         sub: "year-over-year" },
-    { value: "92%",  label: "Subscription revenue",    sub: "model transition" },
-    { value: "3",    label: "New enterprise products", sub: "launched" },
-    { value: "2",    label: "Non-core divestitures",   sub: "completed" },
+    { value: "75%", label: "Signings growth",         sub: "year-over-year" },
+    { value: "92%", label: "Subscription revenue",    sub: "model transition" },
+    { value: "3",   label: "New enterprise products", sub: "launched" },
+    { value: "2",   label: "Non-core divestitures",   sub: "completed" },
   ],
   results: [
-    "Transitioned the business to a 92% subscription-based revenue model.",
     "Increased signings by 75% year-over-year.",
-    "Launched three new enterprise products and divested two non-core business lines.",
-    "Significantly reduced operating expenses while building a more scalable organization.",
+    "Transitioned the business to a 92% subscription-based revenue model.",
+    "Successfully launched three new enterprise products that expanded the platform portfolio.",
+    "Completed the strategic divestiture of two non-core business lines, sharpening organizational focus.",
+    "Significantly reduced operating expenses while creating a more efficient, scalable organization.",
   ],
+  closing: "Beyond the measurable business results, the transformation established a commercial operating model capable of delivering stronger customer lifetime value, improved forecasting discipline, increased strategic agility, and enhanced long-term enterprise value.",
 };
 
 function FrameworkSection() {
@@ -222,9 +240,35 @@ function FrameworkSection() {
                   {p.caseStudy && csOpen && (
                     <div className="cs-inline-panel">
                       <div className="cs-inline-header">
-                        <span className="cs-inline-tag">Framework in Practice</span>
+                        <span className="cs-inline-tag">Case Study · Framework in Practice</span>
                         <span className="cs-inline-industry">{GTM_CASE_STUDY.industry}</span>
                       </div>
+
+                      <div className="cs-inline-title">Transforming a Legacy Enterprise into a Platform-Based Subscription Business</div>
+
+                      <div className="cs-inline-two-col">
+                        <div>
+                          <span className="cs-inline-section-label">Situation</span>
+                          {GTM_CASE_STUDY.situation.map((p, i) => <p key={i} className="cs-inline-body">{p}</p>)}
+                        </div>
+                        <div>
+                          <span className="cs-inline-section-label">Obstacles</span>
+                          {GTM_CASE_STUDY.obstacles.map((p, i) => <p key={i} className="cs-inline-body">{p}</p>)}
+                        </div>
+                      </div>
+
+                      <div className="cs-inline-divider" />
+
+                      <span className="cs-inline-section-label">Actions</span>
+                      <p className="cs-inline-body">{GTM_CASE_STUDY.actionsIntro}</p>
+                      <ul className="cs-inline-results">
+                        {GTM_CASE_STUDY.actions.map((a, i) => <li key={i}>{a}</li>)}
+                      </ul>
+
+                      <div className="cs-inline-divider" />
+
+                      <span className="cs-inline-section-label">Results</span>
+                      <p className="cs-inline-body">{GTM_CASE_STUDY.resultsIntro}</p>
                       <div className="cs-inline-metrics">
                         {GTM_CASE_STUDY.metrics.map((m, i) => (
                           <div className="cs-inline-metric" key={i}>
@@ -234,10 +278,10 @@ function FrameworkSection() {
                           </div>
                         ))}
                       </div>
-                      <p className="cs-inline-situation">{GTM_CASE_STUDY.situation}</p>
                       <ul className="cs-inline-results">
                         {GTM_CASE_STUDY.results.map((r, i) => <li key={i}>{r}</li>)}
                       </ul>
+                      <p className="cs-inline-closing">{GTM_CASE_STUDY.closing}</p>
                     </div>
                   )}
                 </div>
