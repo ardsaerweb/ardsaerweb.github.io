@@ -426,8 +426,9 @@ function FrameworkSection() {
               <em>Revenue Architecture Framework.</em>
             </h2>
             <p className="lede">
-              Ardsaer aligns the growth story investors hear with the operating
-              system teams actually execute. Five pillars, one connected model.
+              Five pillars, one connected model. Revenue Architecture is the
+              discipline of making the executive decisions that transform growth
+              into enduring enterprise value.
             </p>
           </div>
         </div>
