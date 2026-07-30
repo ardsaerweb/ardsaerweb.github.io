@@ -220,6 +220,47 @@ const CASE_STUDIES = {
     ],
     closing: "Beyond the measurable business results, the transformation established a commercial operating model capable of delivering stronger customer lifetime value, improved forecasting discipline, increased strategic agility, and enhanced long-term enterprise value.",
   },
+  2: {
+    title: "Building a Revenue System That Made Growth Predictable",
+    subtitle: null,
+    industry: "Geospatial Intelligence · Enterprise Software",
+    situation: [
+      "Following the integration of multiple operating businesses, the commercial organization was managing growth through disparate sales processes, forecasting methodologies, customer success practices, and performance metrics. While individual teams were delivering results, leadership lacked a unified commercial operating system capable of consistently forecasting revenue, identifying execution risks, and scaling growth across the enterprise.",
+      "The objective was to create a disciplined Revenue System that improved visibility, increased accountability, and enabled predictable, repeatable growth.",
+    ],
+    obstaclesIntro: "The organization faced multiple structural challenges:",
+    obstaclesBullets: true,
+    obstacles: [
+      "Sales and Customer Success operated with different success metrics.",
+      "Forecasting accuracy varied across business units and regions.",
+      "Pipeline quality and inspection processes lacked consistency.",
+      "Product, Marketing, Sales, and Customer Success often optimized independently rather than collectively.",
+      "Leadership needed better visibility into recurring revenue performance as the business transitioned toward subscriptions.",
+    ],
+    actionsIntro: "Rather than focusing on individual sales initiatives, the transformation centered on building an integrated Revenue System that connected every stage of the commercial lifecycle. Key initiatives included:",
+    actions: [
+      "Redesigned the commercial organization to align Sales, Customer Success, Marketing, Product Management, and Business Development around shared revenue objectives.",
+      "Established standardized forecasting disciplines, pipeline governance, and performance reviews to improve executive visibility and decision-making.",
+      "Implemented common operating metrics across the commercial organization, improving accountability and cross-functional execution.",
+      "Integrated customer acquisition, expansion, renewal, and retention into a unified recurring revenue framework.",
+      "Introduced executive operating rhythms that enabled earlier identification of execution risks and more proactive resource allocation.",
+    ],
+    actionsOutro: null,
+    metrics: [
+      { value: "35%",  label: "Sales cycle reduction",   sub: "year-over-year" },
+      { value: "2×",   label: "ARR per customer cohort", sub: "doubled" },
+      { value: "118%", label: "Net Revenue Retention",   sub: "achieved" },
+    ],
+    resultsIntro: "The new Revenue System transformed commercial execution from reactive management to disciplined operational leadership. Business outcomes included:",
+    results: [
+      "Reduced sales cycle length by 35%.",
+      "Doubled annual recurring revenue generated per customer cohort.",
+      "Improved forecast accuracy, providing leadership with greater confidence in planning and capital allocation.",
+      "Increased Net Revenue Retention to 118%.",
+      "Created a scalable commercial operating system capable of supporting sustained enterprise growth.",
+    ],
+    closing: "Beyond the measurable outcomes, leadership gained something equally valuable: confidence in the business. Revenue became more predictable, execution became more transparent, and strategic decisions could be made using consistent, enterprise-wide operating data.",
+  },
 };
 
 function CaseStudyPanel({ cs }) {
@@ -240,7 +281,11 @@ function CaseStudyPanel({ cs }) {
         </div>
         <div>
           <span className="cs-inline-section-label">Obstacles</span>
-          {cs.obstacles.map((t, i) => <p key={i} className="cs-inline-body">{t}</p>)}
+          {cs.obstaclesIntro && <p className="cs-inline-body">{cs.obstaclesIntro}</p>}
+          {cs.obstaclesBullets
+            ? <ul className="cs-inline-results">{cs.obstacles.map((t, i) => <li key={i}>{t}</li>)}</ul>
+            : cs.obstacles.map((t, i) => <p key={i} className="cs-inline-body">{t}</p>)
+          }
         </div>
       </div>
 
@@ -278,7 +323,7 @@ function FrameworkSection() {
   const pillars = [
     { id: 0, name: "Market Thesis",        body: "Who we serve, why we win, where we focus.",                                    caseStudy: true },
     { id: 1, name: "GTM Design",           body: "Sales motion, channels, segmentation, pricing, and funnel architecture.",      caseStudy: true },
-    { id: 2, name: "Revenue System",       body: "Pipeline, forecasting, metrics, CRM discipline, operating cadence." },
+    { id: 2, name: "Revenue System",       body: "Pipeline, forecasting, metrics, CRM discipline, operating cadence.",      caseStudy: true },
     { id: 3, name: "Talent & Leadership",  body: "Org design, roles, accountability, performance standards, leadership rhythm." },
     { id: 4, name: "Capital Readiness",    body: "Investor story, growth model, board reporting, commercial proof." },
   ];
