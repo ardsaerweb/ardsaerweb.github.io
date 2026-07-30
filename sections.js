@@ -261,6 +261,42 @@ const CASE_STUDIES = {
     ],
     closing: "Beyond the measurable outcomes, leadership gained something equally valuable: confidence in the business. Revenue became more predictable, execution became more transparent, and strategic decisions could be made using consistent, enterprise-wide operating data.",
   },
+  3: {
+    title: "Building High-Performance Commercial Organizations",
+    subtitle: null,
+    industry: "Geospatial Intelligence · Enterprise Software",
+    situation: [
+      "Following periods of rapid growth, acquisition, and organizational change, multiple commercial organizations faced a common challenge: talented people operating within fragmented structures, inconsistent leadership practices, and competing priorities. While individual teams were capable of success, the broader organization lacked the alignment, accountability, and leadership systems required to consistently outperform the market.",
+      "The objective was not simply to improve sales performance — it was to build an organizational culture capable of sustaining high performance through growth, change, and transformation.",
+    ],
+    obstaclesIntro: null,
+    obstaclesBullets: false,
+    obstacles: [
+      "The challenge extended beyond organizational design.",
+      "Multiple leadership teams operated with different management philosophies, inconsistent performance expectations, and varying approaches to customer engagement and talent development. Organizational silos limited collaboration, succession planning was uneven, and rapid business transformation demanded new leadership capabilities across every commercial function.",
+      "Creating a unified culture while simultaneously delivering aggressive business objectives required balancing accountability with trust, performance with development, and short-term execution with long-term organizational health.",
+    ],
+    actionsIntro: "A leadership framework was established to create organizational clarity, strengthen accountability, and develop leaders capable of sustaining long-term growth. Key initiatives included:",
+    actions: [
+      "Unified multiple commercial organizations under a shared vision, common operating principles, and aligned performance expectations.",
+      "Redesigned organizational structures to improve collaboration across Sales, Customer Success, Marketing, Product Management, Business Development, and Channel organizations.",
+      "Built leadership teams focused on coaching, succession planning, and talent development rather than transactional management.",
+      "Established performance systems that rewarded accountability, collaboration, customer outcomes, and continuous improvement.",
+      "Recruited, developed, and retained high-performing leaders while making difficult organizational decisions where necessary to strengthen overall performance.",
+      "Fostered a culture grounded in clarity of purpose, ownership, transparency, and continuous learning.",
+    ],
+    actionsOutro: null,
+    metrics: [],
+    resultsIntro: "The organization evolved from a collection of high-performing individuals into a unified leadership team capable of consistently delivering exceptional business results. Business outcomes included:",
+    results: [
+      "Successfully integrated multiple commercial organizations into a single global operating model.",
+      "Delivered sustained revenue growth across multiple executive leadership roles over two decades.",
+      "Built leadership teams recognized for collaboration, accountability, and execution.",
+      "Created stronger succession capability through intentional leadership development.",
+      "Established an organizational culture capable of sustaining performance through acquisitions, restructuring, market disruption, and rapid growth.",
+    ],
+    closing: "Beyond the measurable business outcomes, the organization developed something more enduring: leadership capacity. Teams became more adaptable, leaders became more effective, and the business gained an organizational foundation capable of supporting future transformation.",
+  },
 };
 
 function CaseStudyPanel({ cs }) {
@@ -302,15 +338,17 @@ function CaseStudyPanel({ cs }) {
 
       <span className="cs-inline-section-label">Results</span>
       {cs.resultsIntro && <p className="cs-inline-body">{cs.resultsIntro}</p>}
-      <div className="cs-inline-metrics" style={{ gridTemplateColumns: `repeat(${cs.metrics.length}, 1fr)` }}>
-        {cs.metrics.map((m, i) => (
-          <div className="cs-inline-metric" key={i}>
-            <span className="cs-inline-value">{m.value}</span>
-            <span className="cs-inline-label">{m.label}</span>
-            <span className="cs-inline-sub">{m.sub}</span>
-          </div>
-        ))}
-      </div>
+      {cs.metrics && cs.metrics.length > 0 && (
+        <div className="cs-inline-metrics" style={{ gridTemplateColumns: `repeat(${cs.metrics.length}, 1fr)` }}>
+          {cs.metrics.map((m, i) => (
+            <div className="cs-inline-metric" key={i}>
+              <span className="cs-inline-value">{m.value}</span>
+              <span className="cs-inline-label">{m.label}</span>
+              <span className="cs-inline-sub">{m.sub}</span>
+            </div>
+          ))}
+        </div>
+      )}
       <ul className="cs-inline-results">
         {cs.results.map((r, i) => <li key={i}>{r}</li>)}
       </ul>
@@ -324,7 +362,7 @@ function FrameworkSection() {
     { id: 0, name: "Market Thesis",        body: "Who we serve, why we win, where we focus.",                                    caseStudy: true },
     { id: 1, name: "GTM Design",           body: "Sales motion, channels, segmentation, pricing, and funnel architecture.",      caseStudy: true },
     { id: 2, name: "Revenue System",       body: "Pipeline, forecasting, metrics, CRM discipline, operating cadence.",      caseStudy: true },
-    { id: 3, name: "Talent & Leadership",  body: "Org design, roles, accountability, performance standards, leadership rhythm." },
+    { id: 3, name: "Talent & Leadership",  body: "Org design, roles, accountability, performance standards, leadership rhythm.",  caseStudy: true },
     { id: 4, name: "Capital Readiness",    body: "Investor story, growth model, board reporting, commercial proof." },
   ];
   const [active, setActive] = React.useState(0);
