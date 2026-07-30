@@ -148,51 +148,144 @@ function CapabilitiesSection() {
 }
 
 // ---------- Framework ----------
-const GTM_CASE_STUDY = {
-  industry: "Geospatial Intelligence · Enterprise Software",
-  situation: [
-    "A market-leading geospatial intelligence business had reached a strategic inflection point. While its technology leadership remained unquestioned, its commercial model was still rooted in perpetual licensing as the market increasingly shifted toward platform-based subscription solutions. Leadership recognized that sustaining long-term growth required more than incremental improvements—it required fundamentally redesigning how the business created, delivered, and captured value.",
-    "The strategic objective was to accelerate recurring revenue, improve profitability, and position the business for greater enterprise value while maintaining customer confidence and market leadership.",
-  ],
-  obstacles: [
-    "The challenge extended well beyond introducing subscription pricing. Product strategy, sales execution, customer success, channel partnerships, marketing, and financial management all needed to be redesigned around a recurring revenue business model.",
-    "Simultaneously, the organization needed to make difficult portfolio decisions, execute operational restructuring, and maintain business momentum without disrupting customer relationships or slowing innovation.",
-  ],
-  actionsIntro: "A comprehensive Revenue Architecture was developed to align strategy, execution, and organizational priorities around a platform-based growth model. Key initiatives included:",
-  actions: [
-    "Developed and launched three new enterprise products aligned with evolving customer demand and long-term platform strategy.",
-    "Introduced a two-tier distribution ecosystem that expanded market reach through strategic business partners and resellers.",
-    "Transitioned the commercial organization from a perpetual licensing model to a platform-based, subscription-first operating model, aligning product innovation, customer success, and commercial execution around recurring customer value.",
-    "Streamlined the portfolio through the strategic divestiture of two non-core business lines, allowing greater investment in the company's highest-value capabilities.",
-    "Unified product management, marketing, sales, customer success, and financial management around a disciplined commercial operating model designed to improve execution, forecasting, and scalability.",
-  ],
-  resultsIntro: "The transformation repositioned the organization from a traditional software business to a modern platform company built for predictable, recurring growth. Business outcomes included:",
-  metrics: [
-    { value: "75%", label: "Signings growth",         sub: "year-over-year" },
-    { value: "92%", label: "Subscription revenue",    sub: "model transition" },
-    { value: "3",   label: "New enterprise products", sub: "launched" },
-    { value: "2",   label: "Non-core divestitures",   sub: "completed" },
-  ],
-  results: [
-    "Increased signings by 75% year-over-year.",
-    "Transitioned the business to a 92% subscription-based revenue model.",
-    "Successfully launched three new enterprise products that expanded the platform portfolio.",
-    "Completed the strategic divestiture of two non-core business lines, sharpening organizational focus.",
-    "Significantly reduced operating expenses while creating a more efficient, scalable organization.",
-  ],
-  closing: "Beyond the measurable business results, the transformation established a commercial operating model capable of delivering stronger customer lifetime value, improved forecasting discipline, increased strategic agility, and enhanced long-term enterprise value.",
+const CASE_STUDIES = {
+  0: {
+    title: "Determining Where to Win Before Investing Capital",
+    subtitle: "A disciplined process for determining where a company can create durable competitive advantage before investing capital, talent, and commercial resources.",
+    industry: "Geospatial Intelligence · Enterprise Software",
+    situation: [
+      "A market-leading geospatial intelligence business possessed a diverse commercial portfolio of businesses developed over many years.",
+      "However, not every business leveraged the company's unique competitive advantages, core product capabilities, or supported its long-term strategic direction.",
+    ],
+    obstacles: [
+      "Leadership faced a difficult decision: continue operating semi-profitable businesses — or focus capital, talent, engineering investment, and executive attention on markets where the company could become truly differentiated.",
+    ],
+    actionsIntro: "Conducted a strategic assessment of the portfolio. Evaluated:",
+    actions: [
+      "Market attractiveness",
+      "Competitive differentiation",
+      "Core capabilities",
+      "Capital allocation",
+      "Long-term enterprise value",
+    ],
+    actionsOutro: "Recommended divesting the weather and maritime services businesses because they no longer leveraged the company's unique strengths in geospatial intelligence. Executed both divestitures.",
+    metrics: [
+      { value: "$75M", label: "Generated through divestitures", sub: "two transactions" },
+      { value: "2",    label: "Non-core businesses divested",   sub: "completed" },
+    ],
+    resultsIntro: null,
+    results: [
+      "Generated approximately $75 million through two strategic divestitures.",
+      "Increased organizational focus.",
+      "Improved capital allocation.",
+      "Simplified product strategy.",
+      "Redirected investment toward enterprise geospatial intelligence and AI-enabled platform offerings and reduced overall enterprise budget.",
+    ],
+    closing: null,
+  },
+  1: {
+    title: "Transforming a Legacy Enterprise into a Platform-Based Subscription Business",
+    subtitle: null,
+    industry: "Geospatial Intelligence · Enterprise Software",
+    situation: [
+      "A market-leading geospatial intelligence business had reached a strategic inflection point. While its technology leadership remained unquestioned, its commercial model was still rooted in perpetual licensing as the market increasingly shifted toward platform-based subscription solutions. Leadership recognized that sustaining long-term growth required more than incremental improvements—it required fundamentally redesigning how the business created, delivered, and captured value.",
+      "The strategic objective was to accelerate recurring revenue, improve profitability, and position the business for greater enterprise value while maintaining customer confidence and market leadership.",
+    ],
+    obstacles: [
+      "The challenge extended well beyond introducing subscription pricing. Product strategy, sales execution, customer success, channel partnerships, marketing, and financial management all needed to be redesigned around a recurring revenue business model.",
+      "Simultaneously, the organization needed to make difficult portfolio decisions, execute operational restructuring, and maintain business momentum without disrupting customer relationships or slowing innovation.",
+    ],
+    actionsIntro: "A comprehensive Revenue Architecture was developed to align strategy, execution, and organizational priorities around a platform-based growth model. Key initiatives included:",
+    actions: [
+      "Developed and launched three new enterprise products aligned with evolving customer demand and long-term platform strategy.",
+      "Introduced a two-tier distribution ecosystem that expanded market reach through strategic business partners and resellers.",
+      "Transitioned the commercial organization from a perpetual licensing model to a platform-based, subscription-first operating model, aligning product innovation, customer success, and commercial execution around recurring customer value.",
+      "Streamlined the portfolio through the strategic divestiture of two non-core business lines, allowing greater investment in the company's highest-value capabilities.",
+      "Unified product management, marketing, sales, customer success, and financial management around a disciplined commercial operating model designed to improve execution, forecasting, and scalability.",
+    ],
+    actionsOutro: null,
+    metrics: [
+      { value: "75%", label: "Signings growth",         sub: "year-over-year" },
+      { value: "92%", label: "Subscription revenue",    sub: "model transition" },
+      { value: "3",   label: "New enterprise products", sub: "launched" },
+      { value: "2",   label: "Non-core divestitures",   sub: "completed" },
+    ],
+    resultsIntro: "The transformation repositioned the organization from a traditional software business to a modern platform company built for predictable, recurring growth. Business outcomes included:",
+    results: [
+      "Increased signings by 75% year-over-year.",
+      "Transitioned the business to a 92% subscription-based revenue model.",
+      "Successfully launched three new enterprise products that expanded the platform portfolio.",
+      "Completed the strategic divestiture of two non-core business lines, sharpening organizational focus.",
+      "Significantly reduced operating expenses while creating a more efficient, scalable organization.",
+    ],
+    closing: "Beyond the measurable business results, the transformation established a commercial operating model capable of delivering stronger customer lifetime value, improved forecasting discipline, increased strategic agility, and enhanced long-term enterprise value.",
+  },
 };
+
+function CaseStudyPanel({ cs }) {
+  return (
+    <div className="cs-inline-panel">
+      <div className="cs-inline-header">
+        <span className="cs-inline-tag">Case Study · Framework in Practice</span>
+        <span className="cs-inline-industry">{cs.industry}</span>
+      </div>
+
+      <div className="cs-inline-title">{cs.title}</div>
+      {cs.subtitle && <p className="cs-inline-body" style={{ fontStyle: "italic", marginBottom: "20px" }}>{cs.subtitle}</p>}
+
+      <div className="cs-inline-two-col">
+        <div>
+          <span className="cs-inline-section-label">Situation</span>
+          {cs.situation.map((t, i) => <p key={i} className="cs-inline-body">{t}</p>)}
+        </div>
+        <div>
+          <span className="cs-inline-section-label">Obstacles</span>
+          {cs.obstacles.map((t, i) => <p key={i} className="cs-inline-body">{t}</p>)}
+        </div>
+      </div>
+
+      <div className="cs-inline-divider" />
+
+      <span className="cs-inline-section-label">Actions</span>
+      <p className="cs-inline-body">{cs.actionsIntro}</p>
+      <ul className="cs-inline-results">
+        {cs.actions.map((a, i) => <li key={i}>{a}</li>)}
+      </ul>
+      {cs.actionsOutro && <p className="cs-inline-body" style={{ marginTop: "12px" }}>{cs.actionsOutro}</p>}
+
+      <div className="cs-inline-divider" />
+
+      <span className="cs-inline-section-label">Results</span>
+      {cs.resultsIntro && <p className="cs-inline-body">{cs.resultsIntro}</p>}
+      <div className="cs-inline-metrics">
+        {cs.metrics.map((m, i) => (
+          <div className="cs-inline-metric" key={i}>
+            <span className="cs-inline-value">{m.value}</span>
+            <span className="cs-inline-label">{m.label}</span>
+            <span className="cs-inline-sub">{m.sub}</span>
+          </div>
+        ))}
+      </div>
+      <ul className="cs-inline-results">
+        {cs.results.map((r, i) => <li key={i}>{r}</li>)}
+      </ul>
+      {cs.closing && <p className="cs-inline-closing">{cs.closing}</p>}
+    </div>
+  );
+}
 
 function FrameworkSection() {
   const pillars = [
-    { id: 0, name: "Market Thesis",        body: "Who we serve, why we win, where we focus." },
-    { id: 1, name: "GTM Design",           body: "Sales motion, channels, segmentation, pricing, and funnel architecture.", caseStudy: true },
+    { id: 0, name: "Market Thesis",        body: "Who we serve, why we win, where we focus.",                                    caseStudy: true },
+    { id: 1, name: "GTM Design",           body: "Sales motion, channels, segmentation, pricing, and funnel architecture.",      caseStudy: true },
     { id: 2, name: "Revenue System",       body: "Pipeline, forecasting, metrics, CRM discipline, operating cadence." },
     { id: 3, name: "Talent & Leadership",  body: "Org design, roles, accountability, performance standards, leadership rhythm." },
     { id: 4, name: "Capital Readiness",    body: "Investor story, growth model, board reporting, commercial proof." },
   ];
   const [active, setActive] = React.useState(0);
-  const [csOpen, setCsOpen] = React.useState(false);
+  const [expandedId, setExpandedId] = React.useState(null);
+
+  const toggle = (id) => setExpandedId(expandedId === id ? null : id);
 
   return (
     <section className="section section--dark" id="framework" data-screen-label="04 Framework">
@@ -221,10 +314,10 @@ function FrameworkSection() {
           <ol className="pillar-list">
             {pillars.map((p) => (
               <li
-                className={"pillar " + (active === p.id ? "active" : "") + (p.caseStudy && csOpen ? " cs-open" : "")}
+                className={"pillar " + (active === p.id ? "active" : "") + (expandedId === p.id ? " cs-open" : "")}
                 key={p.id}
                 onMouseEnter={() => setActive(p.id)}
-                onClick={p.caseStudy ? () => setCsOpen(!csOpen) : undefined}
+                onClick={p.caseStudy ? () => toggle(p.id) : undefined}
                 style={p.caseStudy ? { cursor: "pointer" } : {}}
               >
                 <span className="p-num">{String(p.id + 1).padStart(2, "0")}</span>
@@ -232,57 +325,12 @@ function FrameworkSection() {
                   <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "12px" }}>
                     <h4>{p.name}</h4>
                     {p.caseStudy && (
-                      <span className="cs-pill">{csOpen ? "↑ Close" : "Case Study →"}</span>
+                      <span className="cs-pill">{expandedId === p.id ? "↑ Close" : "Case Study →"}</span>
                     )}
                   </div>
                   <p>{p.body}</p>
-
-                  {p.caseStudy && csOpen && (
-                    <div className="cs-inline-panel">
-                      <div className="cs-inline-header">
-                        <span className="cs-inline-tag">Case Study · Framework in Practice</span>
-                        <span className="cs-inline-industry">{GTM_CASE_STUDY.industry}</span>
-                      </div>
-
-                      <div className="cs-inline-title">Transforming a Legacy Enterprise into a Platform-Based Subscription Business</div>
-
-                      <div className="cs-inline-two-col">
-                        <div>
-                          <span className="cs-inline-section-label">Situation</span>
-                          {GTM_CASE_STUDY.situation.map((p, i) => <p key={i} className="cs-inline-body">{p}</p>)}
-                        </div>
-                        <div>
-                          <span className="cs-inline-section-label">Obstacles</span>
-                          {GTM_CASE_STUDY.obstacles.map((p, i) => <p key={i} className="cs-inline-body">{p}</p>)}
-                        </div>
-                      </div>
-
-                      <div className="cs-inline-divider" />
-
-                      <span className="cs-inline-section-label">Actions</span>
-                      <p className="cs-inline-body">{GTM_CASE_STUDY.actionsIntro}</p>
-                      <ul className="cs-inline-results">
-                        {GTM_CASE_STUDY.actions.map((a, i) => <li key={i}>{a}</li>)}
-                      </ul>
-
-                      <div className="cs-inline-divider" />
-
-                      <span className="cs-inline-section-label">Results</span>
-                      <p className="cs-inline-body">{GTM_CASE_STUDY.resultsIntro}</p>
-                      <div className="cs-inline-metrics">
-                        {GTM_CASE_STUDY.metrics.map((m, i) => (
-                          <div className="cs-inline-metric" key={i}>
-                            <span className="cs-inline-value">{m.value}</span>
-                            <span className="cs-inline-label">{m.label}</span>
-                            <span className="cs-inline-sub">{m.sub}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <ul className="cs-inline-results">
-                        {GTM_CASE_STUDY.results.map((r, i) => <li key={i}>{r}</li>)}
-                      </ul>
-                      <p className="cs-inline-closing">{GTM_CASE_STUDY.closing}</p>
-                    </div>
+                  {p.caseStudy && expandedId === p.id && CASE_STUDIES[p.id] && (
+                    <CaseStudyPanel cs={CASE_STUDIES[p.id]} />
                   )}
                 </div>
               </li>
