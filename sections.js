@@ -297,6 +297,48 @@ const CASE_STUDIES = {
     ],
     closing: "Beyond the measurable business outcomes, the organization developed something more enduring: leadership capacity. Teams became more adaptable, leaders became more effective, and the business gained an organizational foundation capable of supporting future transformation.",
   },
+  4: {
+    title: "Positioning a Business for Long-Term Value",
+    subtitle: null,
+    industry: "Geospatial Intelligence · Enterprise Software",
+    situation: [
+      "Following the company's acquisition, the Enterprise business entered a period of strategic transformation. Leadership faced increasing pressure to sharpen strategic focus, modernize its commercial model, and strengthen financial performance. While the organization possessed industry-leading technology and market credibility, portions of the portfolio no longer aligned with its long-term competitive advantages.",
+      "Leadership recognized that maximizing enterprise value would require more than revenue growth — it demanded disciplined capital allocation, sharper strategic focus, and a business model capable of attracting long-term investment.",
+    ],
+    obstaclesIntro: "Improving enterprise value required balancing short-term operating performance with long-term strategic positioning. The organization needed to:",
+    obstaclesBullets: true,
+    obstacles: [
+      "Focus investment on its highest-value capabilities.",
+      "Improve the quality and predictability of revenue.",
+      "Reduce operating complexity without disrupting customers.",
+      "Execute significant portfolio changes while maintaining business momentum.",
+      "Align executive leadership, financial management, and product strategy around long-term value creation rather than short-term financial performance.",
+    ],
+    actionsIntro: "A comprehensive enterprise value strategy was implemented to improve the company's strategic position and strengthen its long-term investment profile. Key initiatives included:",
+    actions: [
+      "Conducted a strategic review of the business portfolio, identifying opportunities to concentrate investment around the organization's core competitive advantages.",
+      "Successfully led the divestiture of two non-core business lines, sharpening strategic focus and generating approximately $75 million in transaction value.",
+      "Accelerated the transition to a platform-based, subscription-first business model, significantly improving the predictability and quality of recurring revenue.",
+      "Launched three new platform-oriented enterprise products aligned with long-term market demand.",
+      "Reduced operating costs while simplifying organizational complexity and improving financial discipline.",
+      "Represented the Enterprise business in Board of Directors meetings, aligning commercial strategy, financial performance, and long-term capital priorities with executive leadership.",
+    ],
+    actionsOutro: null,
+    metrics: [
+      { value: "$75M", label: "Divestiture value",    sub: "two transactions" },
+      { value: "92%",  label: "Subscription revenue", sub: "model transition" },
+      { value: "75%",  label: "Signings growth",      sub: "year-over-year" },
+    ],
+    resultsIntro: "The transformation strengthened both the operating performance and the long-term investment profile of the business. Business outcomes included:",
+    results: [
+      "Completed two strategic divestitures totaling approximately $75 million.",
+      "Transitioned the business to a 92% subscription-based revenue model.",
+      "Increased annual signings by 75% year over year.",
+      "Successfully launched three new enterprise platform offerings.",
+      "Significantly reduced operating expenses while improving organizational focus and scalability.",
+    ],
+    closing: "Beyond the measurable results, the business emerged with a clearer strategic identity, stronger recurring revenue characteristics, improved operating leverage, and a commercial operating model capable of supporting greater long-term enterprise value for shareholders.",
+  },
 };
 
 function CaseStudyPanel({ cs }) {
@@ -363,7 +405,7 @@ function FrameworkSection() {
     { id: 1, name: "GTM Design",           body: "Sales motion, channels, segmentation, pricing, and funnel architecture.",      caseStudy: true },
     { id: 2, name: "Revenue System",       body: "Pipeline, forecasting, metrics, CRM discipline, operating cadence.",      caseStudy: true },
     { id: 3, name: "Talent & Leadership",  body: "Org design, roles, accountability, performance standards, leadership rhythm.",  caseStudy: true },
-    { id: 4, name: "Capital Readiness",    body: "Investor story, growth model, board reporting, commercial proof." },
+    { id: 4, name: "Capital Readiness",    body: "Investor story, growth model, board reporting, commercial proof.",           caseStudy: true },
   ];
   const [active, setActive] = React.useState(0);
   const [expandedId, setExpandedId] = React.useState(null);
