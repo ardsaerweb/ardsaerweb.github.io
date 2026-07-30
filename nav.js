@@ -6,7 +6,6 @@ const NAV_LINKS = [
   { label: "Philosophy",   href: "#philosophy" },
   { label: "Capabilities", href: "#capabilities" },
   { label: "Framework",    href: "#framework" },
-  { label: "Case Study",   href: "#case-study" },
   { label: "Experience",   href: "#experience" },
   { label: "Engagements",  href: "#engagements" },
   { label: "Contact",      href: "#contact" },
