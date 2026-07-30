@@ -774,6 +774,129 @@ h1, h2, h3, h4 {
   .stat:last-child { border-bottom: none; }
 }
 
+/* ---------- Inline Case Study (Framework GTM Design) ---------- */
+.cs-pill {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  border: 1px solid rgba(201,154,69,0.35);
+  border-radius: 2px;
+  padding: 3px 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.pillar:hover .cs-pill { background: rgba(201,154,69,0.08); }
+
+.cs-inline-panel {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gold-line);
+}
+
+.cs-inline-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.cs-inline-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+}
+
+.cs-inline-industry {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-400);
+}
+
+.cs-inline-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--gold-line);
+  border: 1px solid var(--gold-line);
+  margin-bottom: 20px;
+}
+
+.cs-inline-metric {
+  background: var(--navy-800);
+  padding: 16px 14px;
+}
+
+.cs-inline-value {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--gold-400);
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.cs-inline-label {
+  font-size: 11px;
+  color: var(--bone-50);
+  display: block;
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+
+.cs-inline-sub {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate-400);
+  display: block;
+}
+
+.cs-inline-situation {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: rgba(250,248,243,0.65);
+  margin-bottom: 16px;
+}
+
+.cs-inline-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-inline-results li {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(250,248,243,0.65);
+  padding-left: 20px;
+  position: relative;
+}
+
+.cs-inline-results li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--gold-500);
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .cs-inline-metrics { grid-template-columns: 1fr 1fr; }
+}
+
 /* ---------- Case Study ---------- */
 .cs-body {
   display: flex;

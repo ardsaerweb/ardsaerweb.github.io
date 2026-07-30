@@ -148,15 +148,33 @@ function CapabilitiesSection() {
 }
 
 // ---------- Framework ----------
+const GTM_CASE_STUDY = {
+  industry: "Geospatial Intelligence · Enterprise Software",
+  situation: "A market-leading geospatial intelligence business had reached a strategic inflection point. Its commercial model was rooted in perpetual licensing as the market shifted toward platform-based subscription solutions. Leadership recognized that sustaining long-term growth required fundamentally redesigning how the business created, delivered, and captured value.",
+  metrics: [
+    { value: "75%",  label: "Signings growth",         sub: "year-over-year" },
+    { value: "92%",  label: "Subscription revenue",    sub: "model transition" },
+    { value: "3",    label: "New enterprise products", sub: "launched" },
+    { value: "2",    label: "Non-core divestitures",   sub: "completed" },
+  ],
+  results: [
+    "Transitioned the business to a 92% subscription-based revenue model.",
+    "Increased signings by 75% year-over-year.",
+    "Launched three new enterprise products and divested two non-core business lines.",
+    "Significantly reduced operating expenses while building a more scalable organization.",
+  ],
+};
+
 function FrameworkSection() {
   const pillars = [
     { id: 0, name: "Market Thesis",        body: "Who we serve, why we win, where we focus." },
-    { id: 1, name: "GTM Design",           body: "Sales motion, channels, segmentation, pricing, and funnel architecture." },
+    { id: 1, name: "GTM Design",           body: "Sales motion, channels, segmentation, pricing, and funnel architecture.", caseStudy: true },
     { id: 2, name: "Revenue System",       body: "Pipeline, forecasting, metrics, CRM discipline, operating cadence." },
     { id: 3, name: "Talent & Leadership",  body: "Org design, roles, accountability, performance standards, leadership rhythm." },
     { id: 4, name: "Capital Readiness",    body: "Investor story, growth model, board reporting, commercial proof." },
   ];
   const [active, setActive] = React.useState(0);
+  const [csOpen, setCsOpen] = React.useState(false);
 
   return (
     <section className="section section--dark" id="framework" data-screen-label="04 Framework">
@@ -185,14 +203,43 @@ function FrameworkSection() {
           <ol className="pillar-list">
             {pillars.map((p) => (
               <li
-                className={"pillar " + (active === p.id ? "active" : "")}
+                className={"pillar " + (active === p.id ? "active" : "") + (p.caseStudy && csOpen ? " cs-open" : "")}
                 key={p.id}
                 onMouseEnter={() => setActive(p.id)}
+                onClick={p.caseStudy ? () => setCsOpen(!csOpen) : undefined}
+                style={p.caseStudy ? { cursor: "pointer" } : {}}
               >
                 <span className="p-num">{String(p.id + 1).padStart(2, "0")}</span>
-                <div>
-                  <h4>{p.name}</h4>
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "12px" }}>
+                    <h4>{p.name}</h4>
+                    {p.caseStudy && (
+                      <span className="cs-pill">{csOpen ? "↑ Close" : "Case Study →"}</span>
+                    )}
+                  </div>
                   <p>{p.body}</p>
+
+                  {p.caseStudy && csOpen && (
+                    <div className="cs-inline-panel">
+                      <div className="cs-inline-header">
+                        <span className="cs-inline-tag">Framework in Practice</span>
+                        <span className="cs-inline-industry">{GTM_CASE_STUDY.industry}</span>
+                      </div>
+                      <div className="cs-inline-metrics">
+                        {GTM_CASE_STUDY.metrics.map((m, i) => (
+                          <div className="cs-inline-metric" key={i}>
+                            <span className="cs-inline-value">{m.value}</span>
+                            <span className="cs-inline-label">{m.label}</span>
+                            <span className="cs-inline-sub">{m.sub}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <p className="cs-inline-situation">{GTM_CASE_STUDY.situation}</p>
+                      <ul className="cs-inline-results">
+                        {GTM_CASE_STUDY.results.map((r, i) => <li key={i}>{r}</li>)}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </li>
             ))}
